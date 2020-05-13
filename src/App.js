@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Main } from './App.style';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import NavBar from './components/navbar/NavBar';
+import useFetch from './hooks/useFetch';
+import Card from './components/card/Card'
 
 function App() {
+
+  const movies = useFetch("movie");
+
+  console.log(movies)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Main>
+        <NavBar />
+        { movies &&
+        <Card title={movies.results[0].title} img={movies.results[0].poster_path}/>
+      }
+      </Main>
+    </Router>
   );
 }
 
