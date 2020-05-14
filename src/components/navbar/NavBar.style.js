@@ -14,7 +14,7 @@ align-items: center;
     fill: white;
     cursor: pointer;
     :hover {
-        fill: blue;
+        fill: rgb(33, 150, 243);
     }
 }
 label {
