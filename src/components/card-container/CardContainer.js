@@ -6,22 +6,43 @@ import { ReactComponent as ArrowIcon } from '../../assets/flechas.svg';
 
 
 const CardContainer = ({ info, title, link }) => {
-    return ( 
-            <ContainerSection>
+    return (
+        <ContainerSection>
             <TitleSection>
                 {title}
-                { link && 
-                <Link  to={`/${link}`}>
-                <ArrowIcon className="card-container-arrow"/>
-                </Link>
-            }
-            </TitleSection>
-               <ContainerArticles>
-                {
-                    info.map(element => <Card key={element.id} title={element.title} img={element.poster_path} />)
+                {link &&
+                    <Link to={`/${link}`}>
+                        <ArrowIcon className="card-container-arrow" />
+                    </Link>
                 }
-                </ContainerArticles>
-            </ContainerSection>
+            </TitleSection>
+            <ContainerArticles>
+                {
+                    info.map((element, i) => {
+                        if (link) {
+                            if (i < 4) {
+                                return (
+                                    <Card 
+                                    key={element.id} 
+                                    title={element.title} 
+                                    img={element.poster_path}
+                                    />
+                                );
+                            }
+                        }
+                        else {
+                            return (
+                                <Card 
+                                key={element.id}
+                                title={element.title}
+                                img={element.poster_path} 
+                                />
+                            );
+                        }
+                    })
+                }
+            </ContainerArticles>
+        </ContainerSection>
     );
 }
 

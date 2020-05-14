@@ -1,6 +1,6 @@
 import React from 'react';
 import { Main } from './App.style';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './components/navbar/NavBar';
 import useFetch from './hooks/useFetch';
 import CardContainer from './components/card-container/CardContainer'
@@ -15,9 +15,9 @@ const App = () => {
     <Router>
       <Main>
         <NavBar />
-        { movies &&
-         <CardContainer title="Peliculas que son tendencia" info={movies.results} link="peliculas"/>
-      }
+        {movies &&
+          <CardContainer title="Peliculas que son tendencia" info={movies.results} link="peliculas"/>
+        }
       </Main>
     </Router>
   );
