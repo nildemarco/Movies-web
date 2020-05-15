@@ -26,7 +26,7 @@ const useFetch = (type) => {
 
     useEffect(() => {
         const apiKey = process.env.REACT_APP_API_KEY
-        fetch(`https://api.themoviedb.org/3/movie/545609/credits?api_key=${apiKey}&language=en-US`)
+        fetch(`https://api.themoviedb.org/3/movie/545609/recommendations?api_key=${apiKey}&language=en-US`)
             .then(res => res.json())
             .then(data => setData(data));
     }, [])

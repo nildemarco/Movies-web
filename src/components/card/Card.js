@@ -6,7 +6,7 @@ const Card = ({ title, img, subtitle }) => {
     return (
         <CardContainer>
             {img ?
-                <img src={`https://image.tmdb.org/t/p/w500${img}`} alt={title} /> :
+                <img src={`https://image.tmdb.org/t/p/original${img}`} alt={title} /> :
                 <div className="image-not-available">
                     <ImgNotAvailable className="icon-img-card" />
                 </div>

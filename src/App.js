@@ -16,7 +16,7 @@ const App = () => {
       <NavBar />
       <Main>
         {movies &&
-          <IndividualCard info={movies} />
+          <IndividualCard info={movies.results} />
         }
       </Main>
     </Router>

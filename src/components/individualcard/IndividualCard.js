@@ -3,13 +3,14 @@ import { IndividualSection, ContainerImg, ContainerLinks } from './IndividualCar
 import { Link } from 'react-router-dom';
 import InfoCard from './infocard/InfoCard';
 import RepartoCard from './repartocard/RepartoCard';
+import RecomendationContainer from './repartocard/recomendationcontainer/RecomendationContainer';
 
 
 const IndividualCard = ({ info }) => {
     return (
         <IndividualSection>
             <ContainerImg>
-                <img src={`https://image.tmdb.org/t/p/w500${info.backdrop_path}`} />
+                <img src={`https://image.tmdb.org/t/p/original${info.backdrop_path}`} />
             </ContainerImg>
             <ContainerLinks>
                 <Link>
@@ -26,7 +27,9 @@ const IndividualCard = ({ info }) => {
                 </Link>
             </ContainerLinks>
             {/* <InfoCard info={info} /> */}
-            <RepartoCard info={info}/>
+            {/* <RepartoCard info={info}/> */}
+            <RecomendationContainer info={info}/>
+
         </IndividualSection>
     );
 }
