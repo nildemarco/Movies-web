@@ -7,7 +7,8 @@ const SearchBar = () => {
         <label><SearchIcon className="icons-home" alt="Search" />
             <SearchInput
                 type="text"
-                placeholder="Search">
+                placeholder="Search"
+            >
             </SearchInput>
         </label>
     );

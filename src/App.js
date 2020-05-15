@@ -3,7 +3,7 @@ import { Main } from './App.style';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './components/navbar/NavBar';
 import useFetch from './hooks/useFetch';
-import CardContainer from './components/card-container/CardContainer'
+import IndividualCard from './components/individualcard/IndividualCard';
 
 
 const App = () => {
@@ -13,10 +13,10 @@ const App = () => {
   console.log(movies)
   return (
     <Router>
+      <NavBar />
       <Main>
-        <NavBar />
         {movies &&
-          <CardContainer title="Peliculas que son tendencia" info={movies.results} link="peliculas"/>
+          <IndividualCard info={movies} />
         }
       </Main>
     </Router>
