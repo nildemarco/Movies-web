@@ -1,9 +1,9 @@
 import React from 'react';
 import { IndividualSection, ContainerImg, ContainerLinks } from './IndividualCard.style';
-import { Link } from 'react-router-dom';
-import InfoCard from './infocard/InfoCard';
-import RepartoCard from './repartocard/RepartoCard';
-import RecomendationContainer from './repartocard/recomendationcontainer/RecomendationContainer';
+import { Link, Switch, Route } from 'react-router-dom';
+// import InfoCard from '../infocard/InfoCard';
+// import RepartoCard from './repartocard/RepartoCard';
+// import RecomendationContainer from './repartocard/recomendationcontainer/RecomendationContainer';
 
 
 const IndividualCard = ({ info }) => {
@@ -26,10 +26,13 @@ const IndividualCard = ({ info }) => {
                     SIMILARES
                 </Link>
             </ContainerLinks>
+            <Switch>
+                <Route/>
             {/* <InfoCard info={info} /> */}
             {/* <RepartoCard info={info}/> */}
-            <RecomendationContainer info={info}/>
+            </Switch>
 
+            {/* <RecomendationContainer info={info}/> */}
         </IndividualSection>
     );
 }

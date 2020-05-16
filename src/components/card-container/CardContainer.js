@@ -20,22 +20,22 @@ const CardContainer = ({ info, title, link }) => {
                 {
                     info.map((element, i) => {
                         if (link) {
-                            if (i < 4) {
+                            if (i < 5) {
                                 return (
-                                    <Card 
-                                    key={element.id} 
-                                    title={element.title} 
-                                    img={element.poster_path}
+                                    <Card
+                                        key={element.id}
+                                        title={element.title}
+                                        img={element.poster_path}
                                     />
                                 );
                             }
                         }
                         else {
                             return (
-                                <Card 
-                                key={element.id}
-                                title={element.title}
-                                img={element.poster_path} 
+                                <Card
+                                    key={element.id}
+                                    title={element.title}
+                                    img={element.poster_path}
                                 />
                             );
                         }
