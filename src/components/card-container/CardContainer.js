@@ -9,32 +9,31 @@ const CardContainer = ({ info, title, link }) => {
     return (
         <ContainerSection>
             <TitleSection>
-                {title}
-                {link &&
+                {link ?
                     <Link to={`/${link}`}>
+                        <h2>{title}</h2>
                         <ArrowIcon className="card-container-arrow" />
-                    </Link>
+                    </Link> :
+                    <h2>{title}</h2>
                 }
             </TitleSection>
             <ContainerArticles>
                 {
                     info.map((element, i) => {
-                        if (link) {
-                            if (i < 5) {
-                                return (
-                                    <Card
-                                        key={element.id}
-                                        title={element.title}
-                                        img={element.poster_path}
-                                    />
-                                );
-                            }
-                        }
-                        else {
+                        if (link && i < 5) {
                             return (
                                 <Card
                                     key={element.id}
-                                    title={element.title}
+                                    title={element.title ? element.title : element.original_name}
+                                    img={element.poster_path}
+                                />
+                            );
+                        }
+                        else if (!link) {
+                            return (
+                                <Card
+                                    key={element.id}
+                                    title={element.title ? element.title : element.original_name}
                                     img={element.poster_path}
                                 />
                             );
@@ -42,7 +41,7 @@ const CardContainer = ({ info, title, link }) => {
                     })
                 }
             </ContainerArticles>
-        </ContainerSection>
+        </ContainerSection >
     );
 }
 

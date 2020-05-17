@@ -6,18 +6,27 @@ display: flex;
 flex-direction: column;
 `;
 
-export const TitleSection = styled.h2`
-margin: 5px;
+export const TitleSection = styled.div`
+margin: 10px;
 color: #FAFAFA;
-font-weight: lighter;
 display: flex;
 align-items: center;
+h2 {
+font-weight: lighter;
 font-size: 32px;
+margin: 2px;
+}
 a {
     display: flex;
     align-items: center;
     text-decoration: none;
+    cursor: pointer;
+    :visited {
+        color: #FAFAFA;
+
+    }
 }
+
 .card-container-arrow {
  width: 20px;
  height: 20px;

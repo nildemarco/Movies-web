@@ -3,10 +3,8 @@ import { useState, useEffect } from 'react';
 const useFetch = (arr, obj = {query: "", page:""}) => {
 
     const [data, setData] = useState(null);
-
-    
+ 
     const getApiUrl = () => {
-        const urlBase = 'https://api.themoviedb.org/3/'
         let urlApi = new URL('https://api.themoviedb.org/3/')
             urlApi.pathname = arr.join("/") 
             urlApi.search = new URLSearchParams({
@@ -18,8 +16,6 @@ const useFetch = (arr, obj = {query: "", page:""}) => {
         console.log(urlApi)
        return urlApi
     }
-
-//   console.log(getApiUrl())
 
     useEffect(() => {
         fetch(getApiUrl())

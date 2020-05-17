@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { HomeContainer } from './Home.style';
 import CardContainer from '../../components/card-container/CardContainer';
-import useFecth from '../../hooks/useFetch';
+import DataContext from '../../context/DataContext';
 
 const Home = () => {
+  const info = useContext(DataContext);
 
-    const movies = useFecth([3, 'trending', 'movies', 'week']);
-
-    const series = useFecth([3, 'trending', 'tv', 'week']);
-
-    console.log("pelis", movies)
-    console.log("series", series)
+  const {movies, series} = info;
 
     return (
         <HomeContainer>
@@ -18,14 +14,14 @@ const Home = () => {
                 <CardContainer
                     info={movies.results}
                     title="Peliculas que son tendencia"
-                    link="/trending/page/1"
+                    link="movie/trending/page/1"
                 />
             }
             {series &&
                 <CardContainer
                     info={series.results}
                     title="Series que son tendencia"
-                    link="/trending/page/1"
+                    link="tv/trending/page/1"
                 />
             }
         </HomeContainer>
