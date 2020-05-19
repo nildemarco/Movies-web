@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
-export const SeriesGenresContainer = styled.section`
+export const GenresContainer = styled.section`
+width: 100%;
 padding: 30px 5px;
 `;
