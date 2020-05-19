@@ -8,13 +8,13 @@ flex-direction: column;
 
 export const TitleSection = styled.div`
 margin: 10px;
-color: #FAFAFA;
 display: flex;
 align-items: center;
 h2 {
 font-weight: lighter;
 font-size: 32px;
 margin: 2px;
+color: #FAFAFA;
 }
 a {
     display: flex;

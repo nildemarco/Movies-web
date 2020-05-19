@@ -7,6 +7,8 @@ import useFetch from './hooks/useFetch';
 import DataContext from './context/DataContext';
 import AllMovies from './views/movies/AllMovies';
 import AllSeries from './views/tv/AllSeries';
+import MediaGenres from './views/mediagenres/MediaGenres'
+
 
 
 const App = () => {
@@ -15,7 +17,7 @@ const App = () => {
     movies: useFetch([3, 'trending', 'movies', 'week']),
     series: useFetch([3, 'trending', 'tv', 'week'])
   }
-
+   console.log(info.series)
   return (
     <Router>
       <NavBar />
@@ -23,6 +25,7 @@ const App = () => {
         <DataContext.Provider value={info}>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/:media" component={MediaGenres}/>
             <Route exact path="/movie/trending/page/1" component={AllMovies} />
             <Route exact path="/tv/trending/page/1" component={AllSeries} />
           </Switch>

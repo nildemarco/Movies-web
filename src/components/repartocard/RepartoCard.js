@@ -9,6 +9,7 @@ const RepartoCard = ({ info }) => {
                 return (
                     <Card
                         key={element.id}
+                        id={element.id}
                         title={element.name}
                         img={element.profile_path}
                         subtitle={element.character}

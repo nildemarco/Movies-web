@@ -13,7 +13,7 @@ const NavBar = () => {
             <Link to="/">
                 <HomeIcon className="icons-home" />
             </Link>
-            <Link to="/movies">
+            <Link to="/movie">
                 <ProjectorIcon className="icons-home" />
             </Link>
             <Link to="/tv">

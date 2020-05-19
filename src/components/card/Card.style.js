@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
-export const CardContainer = styled.article`
+export const StyledArticle = styled.article`
 width: 250px;
 /* height: 550px; */
 margin: 10px;
 display: flex;
 flex-direction: column;
-color: #FAFAFA; 
+color: #FAFAFA;
+a {
+    text-decoration: none;
+    color: #FAFAFA;
+}
 img {
     width: 100%;
     height: auto;
