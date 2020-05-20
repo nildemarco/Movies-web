@@ -1,7 +1,7 @@
 import React from 'react';
 import { GenresContainer } from './Genres.style';
-import useFetch from '../../hooks/useFetch';
-import CardContainer from '../../components/card-container/CardContainer';
+import useFetch from '../../../hooks/useFetch';
+import CardContainer from '../../../components/card-container/CardContainer';
 
 
 const Genres = ({mediaType}) => {

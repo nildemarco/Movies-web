@@ -5,9 +5,9 @@ import NavBar from './components/navbar/NavBar';
 import Home from './views/home/Home';
 import useFetch from './hooks/useFetch';
 import DataContext from './context/DataContext';
-import AllMovies from './views/movies/AllMovies';
-import AllSeries from './views/tv/AllSeries';
-import MediaGenres from './views/mediagenres/MediaGenres'
+import MediaGenres from './views/mediagenres/MediaGenres';
+import MediaView from './views/mediaview/MediaView';
+import IndividualCard from './views/individualcard/IndividualCard';
 
 
 
@@ -17,7 +17,7 @@ const App = () => {
     movies: useFetch([3, 'trending', 'movies', 'week']),
     series: useFetch([3, 'trending', 'tv', 'week'])
   }
-   console.log(info.series)
+
   return (
     <Router>
       <NavBar />
@@ -26,8 +26,8 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/:media" component={MediaGenres}/>
-            <Route exact path="/movie/trending/page/1" component={AllMovies} />
-            <Route exact path="/tv/trending/page/1" component={AllSeries} />
+            <Route exact path="/:media/:mediagenres/page/:numberPage" component={MediaView} />
+            <Route exact path="/:media/:id/info" component={IndividualCard} />
           </Switch>
         </DataContext.Provider>
       </Main>

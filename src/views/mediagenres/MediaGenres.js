@@ -1,7 +1,7 @@
 import React from 'react';
 import { MediaGenresContainer } from './MediaGenres.style';
 import { useParams } from 'react-router-dom';
-import Genres from '../genres/Genres';
+import Genres from './genres/Genres';
 
 
 const MediaGenres = () => {

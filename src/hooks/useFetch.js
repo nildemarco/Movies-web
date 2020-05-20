@@ -26,6 +26,3 @@ const useFetch = (arr, obj = {query: "", page:""}) => {
 }
 
 export default useFetch;
-
-
-//https://api.themoviedb.org/3/trending/${type}/week?
