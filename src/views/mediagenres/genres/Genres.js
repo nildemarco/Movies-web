@@ -23,7 +23,7 @@ const Genres = ({mediaType}) => {
                             title= {mediaType === "tv"? 
                             "Series Populares":
                             "Peliculas Populares"}
-                            link={`${mediaType}/popular`}
+                            link={`${mediaType}/popular/page/1`}
                             mediaType={mediaType}
                         />
                     }
@@ -34,7 +34,7 @@ const Genres = ({mediaType}) => {
                             title= {mediaType === "tv"? 
                             "Series con mejores criticas" :
                             "Peliculas con mejores criticas"}
-                            link={`${mediaType}/top_rated`}
+                            link={`${mediaType}/top_rated/page/1`}
                             mediaType={mediaType}
                         />
                     }
@@ -42,7 +42,7 @@ const Genres = ({mediaType}) => {
                         <CardContainer
                             info={data.upcoming.results}
                             title="Peliculas a estrenar"
-                            link={`${mediaType}/upcoming`}
+                            link={`${mediaType}/upcoming/page/1`}
                             mediaType={mediaType}
                         />
                     }
@@ -52,7 +52,7 @@ const Genres = ({mediaType}) => {
                             title={mediaType === "tv"? 
                             "Series al aire" :
                             "Peliculas en cine"}
-                            link={`${mediaType}/${mediaType === "tv"? "on_the_air": "now_playing"}`}
+                            link={`${mediaType}/${mediaType === "tv"? "on_the_air": "now_playing"}/page/1`}
                             mediaType={mediaType}
                         />
                     }

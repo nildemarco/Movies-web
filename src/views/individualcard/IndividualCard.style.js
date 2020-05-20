@@ -37,6 +37,5 @@ font-weight: bold;
     :hover {
         color: #FAFAFA;
     }
-
 }
 `;
