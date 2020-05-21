@@ -10,7 +10,6 @@ import MediaView from './views/mediaview/MediaView';
 import IndividualCard from './views/individualcard/IndividualCard';
 
 
-
 const App = () => {
 
   const info = {

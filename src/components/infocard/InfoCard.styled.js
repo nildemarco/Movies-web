@@ -27,7 +27,7 @@ p {
     font-weight: lighter;
     line-height: 20px;
     a {
-    color: rgb(168, 170, 173);
+    color: rgb(33, 150, 243);
     margin: 10px;
     text-decoration: none;
     :focus {
