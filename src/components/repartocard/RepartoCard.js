@@ -1,11 +1,18 @@
 import React from 'react';
 import { RepartoContainer } from './RepartoCard.style';
-import Card from '../../card/Card';
+import Card from '../card/Card';
+import { useParams } from 'react-router-dom';
+import useFetch from '../../hooks/useFetch';
 
-const RepartoCard = ({ info }) => {
+const RepartoCard = () => {
+
+    const params = useParams();
+    
+    const info = useFetch([3, params.media, params.id, 'credits']);
+
     return (
         <RepartoContainer>
-            {info.cast.map(element => {
+            {info && info.cast.map(element => {
                 return (
                     <Card
                         key={element.id}
@@ -15,7 +22,6 @@ const RepartoCard = ({ info }) => {
                         subtitle={element.character}
                     />
                 );
-
             })}
         </RepartoContainer>
     );

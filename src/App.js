@@ -27,7 +27,7 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/:media" component={MediaGenres}/>
             <Route exact path="/:media/:mediagenres/page/:numberPage" component={MediaView} />
-            <Route exact path="/:media/:id/info" component={IndividualCard} />
+            <Route exact path="/:media/:id/:section" component={IndividualCard} />
           </Switch>
         </DataContext.Provider>
       </Main>

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const InfoContainer = styled.article`
-width: 100%;
 display: flex;
 align-items: flex-start;
 padding: 20px;
