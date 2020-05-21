@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledArticle } from './Card.style';
-import { ReactComponent as ImgNotAvailable } from '../../assets/img.svg'
+import { ReactComponent as ImgNotAvailable } from '../../assets/img.svg';
 import { Link } from 'react-router-dom';
 
 

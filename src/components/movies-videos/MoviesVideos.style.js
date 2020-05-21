@@ -11,4 +11,7 @@ font-size: 30px;
 font-weight: lighter;
 color: #FAFAFA;
 margin: 10px;
+h4 {
+    width: 80%;
+}
 `;

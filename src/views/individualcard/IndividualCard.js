@@ -6,41 +6,53 @@ import InfoCard from '../../components/infocard/InfoCard';
 import RepartoCard from '../../components/repartocard/RepartoCard';
 import MoviesVideos from '../../components/movies-videos/MoviesVideos';
 import SimilarMedia from '../../components/similar-media/SimilarMedia';
+import SeasonTv from '../../components/season/SeasonTv';
 
 
 const IndividualCard = () => {
+
     const params = useParams();
 
     const info = useFetch([3, params.media, params.id])
 
     return (
         <IndividualSection>
-            { info &&
-              <>
-                <ContainerImg>
-                <img src={`https://image.tmdb.org/t/p/original${info.backdrop_path}`} />
-            </ContainerImg>
-            <ContainerLinks>
-                <Link to={`/${params.media}/${params.id}/info`}>
-                    INFO
+            {info &&
+                <>
+                    <ContainerImg>
+                        <img src={`https://image.tmdb.org/t/p/original${info.backdrop_path}`} />
+                    </ContainerImg>
+                    <ContainerLinks>
+                        <Link to={`/${params.media}/${params.id}/info`}>
+                            INFO
                 </Link>
-                <Link to={`/${params.media}/${params.id}/cast`}>
-                    REPARTO
+                        {params.media === "tv" &&
+                            <Link to={`/${params.media}/${params.id}/seasons/1`}>
+                                EPISODIOS
                 </Link>
-                <Link to={`/${params.media}/${params.id}/videos`}>
-                    VIDEOS
+                        }
+                        <Link to={`/${params.media}/${params.id}/cast`}>
+                            REPARTO
                 </Link>
-                <Link to={`/${params.media}/${params.id}/similar`}>
-                    SIMILARES
+                        {params.media === "movie" &&
+                            <Link to={`/${params.media}/${params.id}/videos`}>
+                                VIDEOS
                 </Link>
-            </ContainerLinks>
-            <Switch>
-                <Route path="/:media/:id/info"  component={InfoCard}/>
-                <Route path="/:media/:id/cast"  component={RepartoCard}/>
-                <Route path="/:media/:id/videos"  component={MoviesVideos}/>
-                <Route path="/:media/:id/similar"  component={SimilarMedia}/>
-            </Switch>
-            </>
+                        }
+                        <Link to={`/${params.media}/${params.id}/similar`}>
+                            SIMILARES
+                </Link>
+                    </ContainerLinks>
+                    <Switch>
+                        <Route path="/:media/:id/info" component={InfoCard} />
+                        <Route path="/:media/:id/seasons/:seasonNumber"
+                            render={(props) => <SeasonTv seasons={info.seasons} />}
+                        />
+                        <Route path="/:media/:id/cast" component={RepartoCard} />
+                        <Route path="/:media/:id/videos" component={MoviesVideos} />
+                        <Route path="/:media/:id/similar" component={SimilarMedia} />
+                    </Switch>
+                </>
             }
         </IndividualSection>
     );
