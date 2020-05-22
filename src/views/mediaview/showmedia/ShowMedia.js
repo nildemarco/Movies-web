@@ -6,7 +6,11 @@ import CardContainer from '../../../components/card-container/CardContainer';
 
 const ShowMedia = ({ mediaType, title }) => {
 
-    const movies = useFetch([3, mediaType.media, mediaType.mediagenres])
+    const obj = {
+        query: mediaType.query
+    }
+
+    const movies = useFetch([3, mediaType.media, mediaType.mediagenres], obj )
     return (
         <ShowMediaContainer>
             {movies &&

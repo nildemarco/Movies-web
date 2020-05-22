@@ -27,7 +27,7 @@ const InfoCard = () => {
                                 <p>Episodios: {info.number_of_episodes}</p>
                             </>
                         }
-                        <p>Duracion: {info.runtime} min</p>
+                        <p>Duracion: {params.media === "movie"? info.runtime: info.episode_run_time[0]} min</p>
                         <p> Genero: {info.genres && info.genres.map((g, i) => {
                             return (
                                 <a key={i} href="/">{g.name}</a>)

@@ -13,6 +13,8 @@ const MediaView = () => {
 
     const { movies, series } = info;
 
+    console.log(params)
+
     return (
         <MediaContainerSection>
             {params.media === "movie" &&
@@ -92,6 +94,9 @@ const MediaView = () => {
                         </>
                     }
                 </>
+            }
+            { params.media === "search" &&
+               <ShowMedia mediaType={params} title={`Resultados para: ${params.query}`}/>
             }
         </MediaContainerSection>
     );
