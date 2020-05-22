@@ -1,6 +1,7 @@
 import React from 'react';
 import { IndividualSection, ContainerImg, ContainerLinks } from './IndividualCard.style';
 import { Link, Switch, Route, useParams } from 'react-router-dom';
+import { ReactComponent as ImgNotAvailable } from '../../assets/img.svg';
 import useFetch from '../../hooks/useFetch';
 import InfoCard from '../../components/infocard/InfoCard';
 import RepartoCard from '../../components/repartocard/RepartoCard';
@@ -20,7 +21,10 @@ const IndividualCard = () => {
             {info &&
                 <>
                     <ContainerImg>
-                        <img src={`https://image.tmdb.org/t/p/original${info.backdrop_path}`} />
+                        { info.backdrop_path? 
+                        <img src={`https://image.tmdb.org/t/p/original${info.backdrop_path}`} /> :
+                        <ImgNotAvailable className="icon-img-card" />
+                        }
                     </ContainerImg>
                     <ContainerLinks>
                         <Link to={`/${params.media}/${params.id}/info`}>

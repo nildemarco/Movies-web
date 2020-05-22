@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Card = ({ id, title, img, subtitle, mediaType }) => {
     return (
         <StyledArticle>
-            <Link to={`${mediaType}/${id}/info`}>
+            <Link to={`/${mediaType}/${id}/info`}>
                 {img ?
                     <img src={`https://image.tmdb.org/t/p/original${img}`} alt={title} /> :
                     <div className="image-not-available">

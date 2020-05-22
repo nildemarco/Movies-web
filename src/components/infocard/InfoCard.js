@@ -1,5 +1,6 @@
 import React from 'react';
 import { InfoContainer, InfoDetails } from './InfoCard.styled';
+import { ReactComponent as ImgNotAvailable } from '../../assets/img.svg';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 
@@ -13,7 +14,10 @@ const InfoCard = () => {
         <>
             {info &&
                 <InfoContainer>
-                    <img src={`https://image.tmdb.org/t/p/w500${info.poster_path}`} alt={info.title} />
+                    {info.poster_path ?
+                        <img src={`https://image.tmdb.org/t/p/w500${info.poster_path}`} alt={info.title} /> :
+                        <ImgNotAvailable className="icon-img-card" />
+                    }
                     <InfoDetails>
                         <h3>{params.media === "tv" ? info.name : info.title}</h3>
                         <p>{info.overview}</p>

@@ -20,6 +20,7 @@ const RepartoCard = () => {
                         title={element.name}
                         img={element.profile_path}
                         subtitle={element.character}
+                        mediaType="person"
                     />
                 );
             })}

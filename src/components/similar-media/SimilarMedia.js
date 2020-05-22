@@ -17,11 +17,12 @@ const SimilarMedia = () => {
                 return (
                     <Card
                         key={element.id}
+                        id={element.id}
                         title={element.title}
                         img={element.poster_path}
+                        mediaType={params.media}
                     />
                 );
-
             })}   
        </SimilarMediaContainer>
     );
