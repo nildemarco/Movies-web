@@ -29,7 +29,7 @@ const CardContainer = ({ info, title, link, mediaType }) => {
                                     id={element.id}
                                     title={element.title ? element.title : element.original_name}
                                     img={element.poster_path}
-                                    mediaType={mediaType}
+                                    mediaType={mediaType=== "search"? element.media_type : mediaType}
                                 />
                             );
                         }
@@ -40,7 +40,7 @@ const CardContainer = ({ info, title, link, mediaType }) => {
                                     id={element.id}
                                     title={element.title ? element.title : element.original_name}
                                     img={element.poster_path}
-                                    mediaType={mediaType}
+                                    mediaType={mediaType=== "search"? element.media_type : mediaType}
                                 />
                             );
                         }

@@ -10,12 +10,13 @@ const ShowMedia = ({ mediaType, title }) => {
         query: mediaType.query
     }
 
-    const movies = useFetch([3, mediaType.media, mediaType.mediagenres], obj )
+    const data = useFetch([3, mediaType.media, mediaType.mediagenres], obj? obj : "")
+    
     return (
         <ShowMediaContainer>
-            {movies &&
+            {data &&
                 <CardContainer
-                    info={movies.results}
+                    info={data.results}
                     title={title}
                     mediaType={mediaType.media}
                 />}
