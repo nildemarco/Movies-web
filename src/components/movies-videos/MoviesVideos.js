@@ -20,7 +20,7 @@ const MoviesVideos = () => {
                             type="text/html"
                             width="640"
                             height="360"
-                            src={`http://www.youtube.com/embed/${video.key}`}
+                            src={`https://www.youtube.com/embed/${video.key}`}
                             frameBorder="0"
                             title={video.name}
                         />

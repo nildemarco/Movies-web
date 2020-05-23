@@ -51,3 +51,8 @@ p {
    }
 }
 `;
+
+export const ExternalIdContainer = styled.div`
+display:flex;
+padding-left: 0px;
+`;

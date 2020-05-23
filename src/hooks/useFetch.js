@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useFetch = (arr, obj = { query: "", page: "" }) => {
+const useFetch = (arr, obj = { query: "", page: "", with_genres: "" }) => {
 
     const [data, setData] = useState(null);
 
@@ -11,7 +11,8 @@ const useFetch = (arr, obj = { query: "", page: "" }) => {
             api_key: process.env.REACT_APP_API_KEY,
             languages: "es-ES",
             ...(obj.page && { page: obj.page }),
-            ...(obj.query && { query: obj.query })
+            ...(obj.query && { query: obj.query }),
+            ...(obj.with_genres && { with_genres: obj.with_genres })
         })
     
         return urlApi
