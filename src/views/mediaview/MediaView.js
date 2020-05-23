@@ -5,6 +5,7 @@ import DataContext from '../../context/DataContext';
 import { useParams } from 'react-router-dom';
 import ShowMedia from './showmedia/ShowMedia';
 
+
 const MediaView = () => {
 
     const params = useParams();
@@ -26,6 +27,7 @@ const MediaView = () => {
                                     info={movies.results}
                                     title="Peliculas que son tendencia"
                                     mediaType={params.media}
+                                    page={params.numberPage}
                                 />
                             }
                         </>
@@ -69,6 +71,7 @@ const MediaView = () => {
                                     info={series.results}
                                     title="Series que son tendencia"
                                     mediaType={params.media}
+                                    page={params.numberPage}
                                 />}
                         </>
                     }

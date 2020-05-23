@@ -21,7 +21,7 @@ const useFetch = (arr, obj = { query: "", page: "" }) => {
         fetch(getApiUrl())
             .then(res => res.json())
             .then(data => setData(data));
-    }, [...arr])
+    }, [...arr, obj.query, obj.page])
 
     return data
 }

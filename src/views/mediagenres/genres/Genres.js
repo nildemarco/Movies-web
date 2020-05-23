@@ -5,7 +5,7 @@ import CardContainer from '../../../components/card-container/CardContainer';
 
 
 const Genres = ({mediaType}) => {
-
+    
     const data = {
         popular: useFetch([3, mediaType, 'popular']),
         topRated: useFetch([3, mediaType, 'top_rated']),
