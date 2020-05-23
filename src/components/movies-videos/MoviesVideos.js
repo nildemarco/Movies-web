@@ -9,7 +9,7 @@ const MoviesVideos = () => {
     const params = useParams();
 
     const info = useFetch([3, params.media, params.id, 'videos'])
-    console.log(info)
+    
     return (
         <MoviesVideosContainer>
             {info && info.results.map(video => {

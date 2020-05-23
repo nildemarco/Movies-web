@@ -17,7 +17,7 @@ img {
 `;
 
 export const InfoDetails = styled.div`
-width: 40%;
+width: 50%;
 margin-left: 30px;
 display: flex;
 flex-direction: column;
@@ -26,6 +26,9 @@ h3 {
     margin-top: 0;
     margin-bottom: 10px;
     font-weight: lighter;
+}
+.MuiRating-root {
+    color: rgb(33, 150, 243);
 }
 p {
     font-size: 20px;

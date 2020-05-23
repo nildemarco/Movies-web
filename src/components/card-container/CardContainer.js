@@ -19,7 +19,7 @@ const CardContainer = ({ info, title, link, mediaType }) => {
                     <h2>{title}</h2>
                 }
                </TitleSection>
-               <ContainerArticles>
+               <ContainerArticles wrap={link? 1 : 0}>
                 {
                     info.map((element, i) => {
                         if (link && i < 5) {

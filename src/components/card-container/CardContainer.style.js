@@ -38,6 +38,6 @@ a {
 export const ContainerArticles = styled.div`
 width: 100%;
 display: flex;
-flex-wrap: wrap;
+flex-wrap: ${props => props.wrap ? 'no-wrap' : 'wrap'};
 align-items: flex-start;
 `;

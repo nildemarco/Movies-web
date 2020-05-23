@@ -6,8 +6,8 @@ import { ReactComponent as SearchIcon } from './../../assets/lupa.svg';
 const SearchBar = () => {
 
     const history = useHistory();
-    
-    const [querySearch, setQuerySearch] = useState(null);
+
+    const [querySearch, setQuerySearch] = useState('');
 
     const handleChange = (e) => {
         setQuerySearch(e.target.value);
@@ -21,15 +21,15 @@ const SearchBar = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-        <label><SearchIcon className="icons-home" alt="Search" />
-            <SearchInput
-                type="text"
-                placeholder="Search"
-                onChange={handleChange}
-                value={querySearch}
-            >
-            </SearchInput>
-        </label>
+            <label><SearchIcon className="icons-home" alt="Search" />
+                <SearchInput
+                    type="text"
+                    placeholder="Search"
+                    onChange={handleChange}
+                    value={querySearch}
+                >
+                </SearchInput>
+            </label>
         </form>
     );
 }

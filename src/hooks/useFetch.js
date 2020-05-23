@@ -13,7 +13,7 @@ const useFetch = (arr, obj = { query: "", page: "" }) => {
             ...(obj.page && { page: obj.page }),
             ...(obj.query && { query: obj.query })
         })
-        console.log(urlApi)
+    
         return urlApi
     }
 
