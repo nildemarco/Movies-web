@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { SeasonTvContainer, EpisodeCardContainer, EpisodeCard } from './SeasonTV.style';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import { ReactComponent as ImgNotAvailable } from '../../assets/img.svg';
 
 const SeasonTv = ({ seasons }) => {
+
+    const history = useHistory();
 
     const params = useParams();
 
@@ -14,6 +16,7 @@ const SeasonTv = ({ seasons }) => {
 
     const handleChange = (e) => {
         setSeasonNumber(e.target.value);
+        history.push(e.target.value);
     }
 
     return (
