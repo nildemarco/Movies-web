@@ -10,46 +10,67 @@ const InfoCard = () => {
 
     const params = useParams();
 
+    const isPerson = params.media === "person";
+
+    const isTv = params.media === "tv";
+
+    const isMovie = params.media === "movie"
+
     const info = useFetch([3, params.media, params.id]);
 
     const externalsIds = useFetch([3, params.media, params.id, "external_ids"]);
 
     const arrExt = externalsIds && Object.entries(externalsIds);
-
+    
     return (
         <>
             {info &&
                 <InfoContainer>
-                    {info.poster_path ?
-                        <img src={`https://image.tmdb.org/t/p/w500${info.poster_path}`} alt={info.title} /> :
+                    {info.poster_path || info.profile_path ?
+                        <img src={`https://image.tmdb.org/t/p/w500${isPerson ?
+                            info.profile_path
+                            :
+                            info.poster_path}`}
+                            alt={info.title}
+                        />
+                        :
                         <ImgNotAvailable className="icon-img-card" />
                     }
                     <InfoDetails>
-                        <h3>{params.media === "tv" ? info.name : info.title}</h3>
-                        <Rating name="rating" defaultValue={info.vote_average / 2} precision={0.5} readOnly />
-                        <p>{info.overview}</p>
-                        {params.media === "tv" &&
+                        <h3>
+                            {isTv || isPerson ? info.name : info.title}</h3>
+                        {isPerson ||
+                            <Rating name="rating" defaultValue={info.vote_average / 2} precision={0.5} readOnly />
+                        }
+                        <p>{isPerson ? info.biography : info.overview}</p>
+                        {isTv &&
                             <>
                                 <p>Temporadas: {info.number_of_seasons}</p>
                                 <p>Episodios: {info.number_of_episodes}</p>
                             </>
                         }
-                        <p>Duracion: {params.media === "movie" ? info.runtime : info.episode_run_time[0]} min</p>
-                        <p> Genero: {info.genres && info.genres.map((g, i) => {
-                            return (
-                                <Link key={i} to={`/${params.media}/${g.name}/${g.id}/page/1`}>{g.name}</Link>)
-                        })}</p>
-                        {params.media === "movie" &&
+                        {isPerson ||
+                            <>
+                                <p>Duracion: {isMovie ? info.runtime : info.episode_run_time[0]} min</p>
+                                <p> Genero: {info.genres && info.genres.map((g, i) => {
+                                    return (
+                                        <Link key={i} to={`/${params.media}/${g.name}/${g.id}/page/1`}>{g.name}</Link>)
+                                })}</p>
+                            </>
+                        }
+                        {isMovie &&
                             <>
                                 <p>Presupuesto: $ {info.budget}</p>
                                 <p>Recaudacion: $ {info.revenue}</p>
                             </>
                         }
-                        <p>Produccion: {info.production_companies && info.production_companies.map(p => `${p.name}, `)}</p>
+                        {isPerson ||
+                            <p>Produccion: {info.production_companies && info.production_companies.map(p => `${p.name}, `)}</p>
+                        }
                         {externalsIds &&
                             <ExternalIdContainer>
                                 {
-                                    arrExt.map((e, i) => <ExternalId data={e} key={i} />)
+                                    arrExt.map((e, i) => <ExternalId data={e} key={i} person={isPerson? params.media : ""}/>)
                                 }
                             </ExternalIdContainer>
                         }

@@ -21,9 +21,9 @@ const IndividualCard = () => {
             {info &&
                 <>
                     <ContainerImg>
-                        { info.backdrop_path? 
-                        <img src={`https://image.tmdb.org/t/p/original${info.backdrop_path}`} /> :
-                        <ImgNotAvailable className="icon-img-card" />
+                        {info.backdrop_path ?
+                            <img src={`https://image.tmdb.org/t/p/original${info.backdrop_path}`} /> :
+                            <ImgNotAvailable className="icon-img-card" />
                         }
                     </ContainerImg>
                     <ContainerLinks>

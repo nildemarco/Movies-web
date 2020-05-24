@@ -2,15 +2,17 @@ import React from 'react';
 import { StyledLink } from './ExternalId.style';
 import { FaImdb, FaFacebookSquare, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
 
-const ExternalId = ({ data }) => {
+const ExternalId = ({ data, person }) => {
 
     const [id, value] = data;
 
+    const title = person ? 'name':'title'
+    
     let url = '';
 
     switch (id) {
         case 'imdb_id':
-            url = "https://www.imdb.com/title"
+            url = `https://www.imdb.com/${title}`
             break;
         case 'facebook_id':
              url = "https://www.facebook.com"
@@ -28,7 +30,7 @@ const ExternalId = ({ data }) => {
 
     return (
         <>
-       {id !== "id" ?
+       {id !== "id" && value ?
           <StyledLink href={`${url}/${value}`}>
             {id === 'imdb_id' && <FaImdb className='icon-ext-id' />}
             {id === 'facebook_id' && <FaFacebookSquare className='icon-ext-id' />}

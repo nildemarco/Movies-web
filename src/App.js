@@ -8,6 +8,7 @@ import DataContext from './context/DataContext';
 import MediaGenres from './views/mediagenres/MediaGenres';
 import MediaView from './views/mediaview/MediaView';
 import IndividualCard from './views/individualcard/IndividualCard';
+import PersonView from './views/personview/PersonView';
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/:media" component={MediaGenres}/>
             <Route exact path="/:media/:mediagenres/:query?/page/:numberPage" component={MediaView} />
+            <Route exact path="/person/:id/:section" component={PersonView}/>
             <Route exact path="/:media/:id/:section/:seasonNumber?" component={IndividualCard} />
           </Switch>
         </DataContext.Provider>

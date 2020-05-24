@@ -23,12 +23,13 @@ select {
 
 export const EpisodeCardContainer = styled.div`
 display: flex;
+justify-content: space-around;
 flex-wrap: wrap;
 `;
 
 export const EpisodeCard = styled.article`
-width: 650px;
-margin: 20px;
+width: 400px;
+margin: 10px;
 padding-left: 20px;
 display: flex;
 flex-direction: column;
