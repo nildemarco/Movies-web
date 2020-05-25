@@ -9,18 +9,17 @@ flex-direction: column;
 
 export const ContainerImg = styled.div`
 width: 100%;
-display: flex;
-justify-content: center;
 img {
     width:100%;
     height: auto;
-    object-fit: cover;
+    
 }
 .icon-img-card {
         width:100px;
         height:200px;
         fill:rgb(168, 170, 173);
     }
+    
 `;
 
 export const ContainerLinks = styled.div`
