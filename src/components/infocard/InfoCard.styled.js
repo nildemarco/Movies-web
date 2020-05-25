@@ -14,9 +14,32 @@ img {
         height:50px;
         fill:rgb(168, 170, 173);
     }
+@media (max-width: 768px) {
+    flex-direction: column;
+    img {
+        width: 280px;
+    }
+}
 `;
 
 export const InfoDetails = styled.div`
+@media (min-width: 320px) and (max-width: 485px) {
+  width: 90%;
+  margin-left: 10px;
+  p{
+      font-size: 10px;
+  }
+}
+@media (max-width: 770px) {
+     .info-card-title {
+           font-size: 40px;
+       }
+       p {
+           font-size: 15px;
+           display: flex;
+           flex-wrap: wrap;
+       }
+}
 width: 50%;
 margin-left: 30px;
 display: flex;
@@ -49,6 +72,7 @@ p {
         color: rgb(33, 150, 243);
     }
    }
+   
 }
 `;
 

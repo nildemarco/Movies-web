@@ -41,4 +41,13 @@ h4{
     font-size: 20px;
     font-weight: lighter;
 }
+@media (max-width: 768px) {
+    width:200px;
+    h3 {
+        font-size: 20px;
+    }
+    .image-not-available {
+        height: 300px;
+    }    
+}
 `;

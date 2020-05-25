@@ -14,14 +14,14 @@ const InfoCard = () => {
 
     const isTv = params.media === "tv";
 
-    const isMovie = params.media === "movie"
+    const isMovie = params.media === "movie";
 
     const info = useFetch([3, params.media, params.id]);
 
     const externalsIds = useFetch([3, params.media, params.id, "external_ids"]);
 
     const arrExt = externalsIds && Object.entries(externalsIds);
-    
+
     return (
         <>
             {info &&
@@ -37,10 +37,15 @@ const InfoCard = () => {
                         <ImgNotAvailable className="icon-img-card" />
                     }
                     <InfoDetails>
-                        <h3>
-                            {isTv || isPerson ? info.name : info.title}</h3>
+                        <h3 className="info-card-title">
+                            {isTv || isPerson ? info.name : info.title}
+                        </h3>
                         {isPerson ||
-                            <Rating name="rating" defaultValue={info.vote_average / 2} precision={0.5} readOnly />
+                            <Rating
+                                name="rating"
+                                defaultValue={info.vote_average / 2}
+                                precision={0.5} readOnly
+                            />
                         }
                         <p>{isPerson ? info.biography : info.overview}</p>
                         {isTv &&
@@ -51,10 +56,21 @@ const InfoCard = () => {
                         }
                         {isPerson ||
                             <>
-                                <p>Duracion: {isMovie ? info.runtime : info.episode_run_time[0]} min</p>
-                                <p> Genero: {info.genres && info.genres.map((g, i) => {
+                                <p>Duracion:
+                                    {isMovie ?
+                                        info.runtime
+                                        :
+                                        info.episode_run_time[0]} min
+                                    </p>
+                                <p>
+                                    Genero:
+                                     {info.genres && info.genres.map((g, i) => {
                                     return (
-                                        <Link key={i} to={`/${params.media}/${g.name}/${g.id}/page/1`}>{g.name}</Link>)
+                                        <Link
+                                            key={i}
+                                            to={`/${params.media}/${g.name}/${g.id}/page/1`}>
+                                            {g.name}
+                                        </Link>)
                                 })}</p>
                             </>
                         }
@@ -65,12 +81,23 @@ const InfoCard = () => {
                             </>
                         }
                         {isPerson ||
-                            <p>Produccion: {info.production_companies && info.production_companies.map(p => `${p.name}, `)}</p>
+                            <p>Produccion:
+                                {info.production_companies &&
+                                    info.production_companies.map(p => `${p.name}, `)}
+                            </p>
                         }
                         {externalsIds &&
                             <ExternalIdContainer>
                                 {
-                                    arrExt.map((e, i) => <ExternalId data={e} key={i} person={isPerson? params.media : ""}/>)
+                                    arrExt.map((e, i) => (
+                                        <ExternalId
+                                            data={e}
+                                            key={i}
+                                            person={isPerson ? params.media
+                                                :
+                                                ""}
+                                        />
+                                    ))
                                 }
                             </ExternalIdContainer>
                         }

@@ -24,12 +24,12 @@ img {
 
 export const ContainerLinks = styled.div`
 width: 100%;
-height: 140px;
 display: flex;
 justify-content: center;
 align-items: center;
 font-size: 28px;
 font-weight: bold;
+padding: 20px;
  a {
     color: rgb(168, 170, 173);
     margin: 10px;
@@ -44,5 +44,11 @@ font-weight: bold;
     :hover {
         color: #FAFAFA;
     }
+}
+@media (min-width: 320px) and (max-width: 485px) {
+  padding: 0px;
+  flex-direction: column;
+  align-items:center;
+  font-size:18px;
 }
 `;

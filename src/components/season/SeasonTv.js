@@ -48,7 +48,7 @@ const SeasonTv = ({ seasons }) => {
                                 }
                                 <h3>
                                     <span>
-                                        S{e.season_number}E{e.episode_number} 
+                                        S{e.season_number}E{e.episode_number}
                                     </span>
                                     {e.name}
                                 </h3>
