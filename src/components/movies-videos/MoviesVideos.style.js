@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const MoviesVideosContainer = styled.article`
 display: flex;
-flex-wrap: wrap;`;
+flex-wrap: wrap;
+`;
 
 export const VideoDetails =styled.div`
 display: flex; 
@@ -12,6 +13,16 @@ font-weight: lighter;
 color: #FAFAFA;
 margin: 10px;
 h4 {
-    width: 80%;
+    width: 450px;
+}
+@media (max-width: 780px) {
+    iframe {
+        width: 300px;
+        height: 300px;
+    }
+    h4 {
+        width: 270px;
+        font-size: 20px;
+    }
 }
 `;
