@@ -42,7 +42,7 @@ h4{
     font-weight: lighter;
 }
 @media (max-width: 768px) {
-    width:200px;
+    width:210px;
     h3 {
         font-size: 20px;
     }

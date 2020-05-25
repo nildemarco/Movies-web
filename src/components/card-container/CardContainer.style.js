@@ -34,9 +34,7 @@ a {
  fill: rgb(33, 150, 243);
 }
 
-@media (min-width: 320px) and (max-width: 510) {
-   
-}
+
 `
 
 export const ContainerArticles = styled.div`
@@ -46,6 +44,7 @@ flex-wrap: ${props => props.wrap ? 'no-wrap' : 'wrap'};
 align-items: flex-start;
 @media (max-width: 768px) {
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
+    justify-content: center;    
 }
 `;
