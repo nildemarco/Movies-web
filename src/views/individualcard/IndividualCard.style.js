@@ -14,6 +14,7 @@ justify-content: center;
 img {
     width:100%;
     height: auto;
+    object-fit: cover;
 }
 .icon-img-card {
         width:100px;
