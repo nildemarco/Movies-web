@@ -45,7 +45,7 @@ padding: 20px;
         color: #FAFAFA;
     }
 }
-@media (min-width: 320px) and (max-width: 485px) {
+@media (max-width: 485px) {
   padding: 0px;
   flex-direction: column;
   align-items:center;

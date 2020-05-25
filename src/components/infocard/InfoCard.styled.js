@@ -14,20 +14,26 @@ img {
         height:50px;
         fill:rgb(168, 170, 173);
     }
-@media (max-width: 768px) {
-    flex-direction: column;
+
+@media (max-width: 770px) {
     img {
         width: 280px;
     }
 }
+@media (max-width: 685px) {
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+ }
 `;
 
 export const InfoDetails = styled.div`
-@media (min-width: 320px) and (max-width: 485px) {
-  width: 90%;
-  margin-left: 10px;
+@media (max-width: 685px) {
+  width: 80%;
+  margin-left: 0px;
   p{
       font-size: 10px;
+      flex-wrap: wrap;
   }
 }
 @media (max-width: 770px) {
