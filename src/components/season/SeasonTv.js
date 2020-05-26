@@ -43,7 +43,7 @@ const SeasonTv = ({ seasons }) => {
                                         src={`https://image.tmdb.org/t/p/original${e.still_path}`}
                                         alt={e.name} /> :
                                     <div className="image-not-available">
-                                        <ImgNotAvailable className="icon-img-card" />
+                                        <ImgNotAvailable className="icon-img-card" alt="Not available" />
                                     </div>
                                 }
                                 <h3>

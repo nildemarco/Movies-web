@@ -11,7 +11,7 @@ const Card = ({ id, title, img, subtitle, mediaType }) => {
                 {img ?
                     <img src={`https://image.tmdb.org/t/p/original${img}`} alt={title} /> :
                     <div className="image-not-available">
-                        <ImgNotAvailable className="icon-img-card" />
+                        <ImgNotAvailable className="icon-img-card"  alt="Not available"/>
                     </div>
                 }
                 <h3>{title}</h3>

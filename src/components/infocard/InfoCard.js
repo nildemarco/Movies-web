@@ -31,10 +31,10 @@ const InfoCard = () => {
                             info.profile_path
                             :
                             info.poster_path}`}
-                            alt={info.title}
+                            alt={isTv || isPerson ? info.name : info.title}
                         />
                         :
-                        <ImgNotAvailable className="icon-img-card" />
+                        <ImgNotAvailable className="icon-img-card" alt="Not available" />
                     }
                     <InfoDetails>
                         <h3 className="info-card-title">
