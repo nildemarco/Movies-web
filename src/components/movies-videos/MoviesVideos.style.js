@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const MoviesVideosContainer = styled.article`
 display: flex;
 flex-wrap: wrap;
+justify-content: center;
 `;
 
 export const VideoDetails =styled.div`

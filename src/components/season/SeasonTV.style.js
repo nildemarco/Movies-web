@@ -22,9 +22,9 @@ select {
 }
 @media (max-width: 770px) {
    select {
-       width: 170px;
+       width: 150px;
        height: 45px;
-       font-size: 16px;
+       font-size: 13px;
    }
 }
 `;
@@ -32,6 +32,7 @@ select {
 export const EpisodeCardContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
+justify-content: center;
 `;
 
 export const EpisodeCard = styled.article`
