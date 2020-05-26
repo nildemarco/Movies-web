@@ -62,8 +62,7 @@ const InfoCard = () => {
                                         :
                                         info.episode_run_time[0]} min
                                     </p>
-                                <p>
-                                    Genero:
+                                <p> Genero:
                                      {info.genres && info.genres.map((g, i) => {
                                     return (
                                         <Link

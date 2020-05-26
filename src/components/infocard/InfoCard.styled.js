@@ -28,29 +28,11 @@ img {
 `;
 
 export const InfoDetails = styled.div`
-@media (max-width: 685px) {
-  width: 80%;
-  margin-left: 0px;
-  p{
-      font-size: 10px;
-      flex-wrap: wrap;
-  }
-}
-@media (max-width: 770px) {
-     .info-card-title {
-           font-size: 40px;
-       }
-       p {
-           font-size: 15px;
-           display: flex;
-           flex-wrap: wrap;
-       }
-}
 width: 50%;
 margin-left: 30px;
 display: flex;
 flex-direction: column;
-h3 {
+.info-card-title {
     font-size: 50px;
     margin-top: 0;
     margin-bottom: 10px;
@@ -79,6 +61,23 @@ p {
     }
    }
    
+}
+@media (max-width: 770px) {
+     .info-card-title {
+           font-size: 40px;
+       }
+       p {
+           font-size: 15px;
+           display: flex;
+           flex-wrap: wrap;
+       }
+}
+@media (max-width: 685px) {
+    .info-card-title {
+           font-size: 35px;
+       }
+  width: 85%;
+  margin-left: 0px;
 }
 `;
 

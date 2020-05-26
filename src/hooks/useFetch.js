@@ -9,7 +9,7 @@ const useFetch = (arr, obj = { query: "", page: "", with_genres: "" }) => {
         urlApi.pathname = arr.join("/")
         urlApi.search = new URLSearchParams({
             api_key: process.env.REACT_APP_API_KEY,
-            languages: "es-ES",
+            language: "es-ES",
             ...(obj.page && { page: obj.page }),
             ...(obj.query && { query: obj.query }),
             ...(obj.with_genres && { with_genres: obj.with_genres })
