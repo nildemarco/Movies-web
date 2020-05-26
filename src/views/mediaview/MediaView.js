@@ -57,7 +57,8 @@ const MediaView = () => {
             {params.media === "search" &&
                 <ShowMedia mediaType={params} title={`Resultados para: ${params.query}`} />
             }
-            {arrGenresDefault.includes(params.mediagenres) ||
+            {!arrGenresDefault.includes(params.mediagenres) &&
+                params.media !== "search" &&
                 <ShowMedia mediaType={params} title={`Genero ${params.mediagenres}`} />
             }
         </MediaContainerSection>
