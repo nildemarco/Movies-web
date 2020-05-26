@@ -1,22 +1,27 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { ReactComponent as HomeIcon } from './../../assets/home.svg';
+import { ReactComponent as ProjectorIcon } from './../../assets/movie.svg';
+import { ReactComponent as TvIcon } from './../../assets/tv.svg';
+import { ReactComponent as SearchImage} from './../../assets/lupa.svg';
 
-export const Nav =styled.nav`
+const complexMixin = css`
+  margin: 5px 15px;
+  width: 30px;
+  height: 30px;
+  fill: ${props => props.isLocation ? 'rgb(33, 150, 243)' : 'white'};
+  cursor: pointer;
+  :hover {
+    fill: rgb(33, 150, 243);
+  }
+`;
+
+export const Nav = styled.nav`
 width: 100%;
 margin: 0px;
 padding: 10px;
 background-color: #141414;
 display: flex;
 align-items: center;
-.icons-home {
-    margin: 5px 15px;
-    width: 30px;
-    height: 30px;
-    fill: white;
-    cursor: pointer;
-    :hover {
-        fill: rgb(33, 150, 243);
-    }
-}
 label {
     display: flex;
     align-items: center;
@@ -26,6 +31,19 @@ label {
   flex-wrap: wrap;
   padding: 0px;
 }
+`;
+
+export const HomeIcons = styled(HomeIcon)`
+${complexMixin}
+`;
+export const Projector = styled(ProjectorIcon)`
+${complexMixin}
+`;
+export const Tv = styled(TvIcon)`
+${complexMixin}
+`;
+export const SearchIcon = styled(SearchImage)`
+${complexMixin}
 `;
 
 export const SearchInput = styled.input`

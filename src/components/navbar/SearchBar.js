@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { SearchInput } from './NavBar.style';
-import { ReactComponent as SearchIcon } from './../../assets/lupa.svg';
+import { useHistory, useLocation } from 'react-router-dom';
+import { SearchInput, SearchIcon } from './NavBar.style';
+
 
 const SearchBar = () => {
 
     const history = useHistory();
+
+    const location = useLocation();
 
     const [querySearch, setQuerySearch] = useState('');
 
@@ -22,7 +24,8 @@ const SearchBar = () => {
     return (
         <form onSubmit={handleSubmit}>
             <label>
-                <SearchIcon className="icons-home" alt="Search" />
+                <SearchIcon isLocation={location.pathname.includes('/search')}
+                />
                 <SearchInput
                     type="text"
                     placeholder="Search"

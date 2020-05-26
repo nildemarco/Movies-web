@@ -1,23 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Nav } from './NavBar.style';
-import { ReactComponent as HomeIcon } from './../../assets/home.svg';
-import { ReactComponent as ProjectorIcon } from './../../assets/movie.svg';
-import { ReactComponent as TvIcon } from './../../assets/tv.svg';
+import { useLocation, Link } from 'react-router-dom';
+import { Nav, HomeIcons, Projector, Tv } from './NavBar.style';
 import SearchBar from './SearchBar';
 
 
 const NavBar = () => {
+
+    const location = useLocation();
+
     return (
         <Nav>
-            <Link to="/">
-                <HomeIcon className="icons-home" />
+            <Link to="/"  >
+                <HomeIcons
+                    isLocation={location.pathname === "/"}
+                />
             </Link>
-            <Link to="/movie">
-                <ProjectorIcon className="icons-home" />
+            <Link to="/movie"  >
+                <Projector
+                    isLocation={location.pathname.includes("/movie")}
+                />
             </Link>
-            <Link to="/tv">
-                <TvIcon className="icons-home" />
+            <Link to="/tv" >
+                <Tv
+                    isLocation={location.pathname.includes("/tv")}
+                />
             </Link>
             <SearchBar />
         </Nav >

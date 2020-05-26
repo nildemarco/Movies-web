@@ -75,9 +75,10 @@ const InfoCard = () => {
                             </>
                         }
                         {isMovie &&
-                            <>
-                                <p>Presupuesto: $ {info.budget}</p>
-                                <p>Recaudacion: $ {info.revenue}</p>
+                            <>{ Boolean(info.budget) &&
+                                <p>Presupuesto: $ {info.budget.toLocaleString('en')}</p>}
+                                {Boolean(info.revenue) &&
+                                <p>Recaudacion: $ {info.revenue.toLocaleString('en')}</p>}
                             </>
                         }
                         {isPerson ||
