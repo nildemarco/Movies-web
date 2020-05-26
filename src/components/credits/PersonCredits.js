@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { CardCreditsContainer } from './PersonCredit.style';
-import Card from '../card/Card';
 import useFetch from '../../hooks/useFetch';
+import { CardCreditsContainer } from './PersonCredits.style';
+import Card from '../card/Card';
 
 
 const PersonCredits = () => {

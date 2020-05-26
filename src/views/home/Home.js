@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
+import DataContext from '../../context/DataContext';
 import { HomeContainer } from './Home.style';
 import CardContainer from '../../components/card-container/CardContainer';
-import DataContext from '../../context/DataContext';
 
 const Home = () => {
   const info = useContext(DataContext);

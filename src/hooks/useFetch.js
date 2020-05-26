@@ -14,8 +14,8 @@ const useFetch = (arr, obj = { query: "", page: "", with_genres: "" }) => {
             ...(obj.query && { query: obj.query }),
             ...(obj.with_genres && { with_genres: obj.with_genres })
         })
-    
-        return urlApi
+
+        return urlApi;
     }
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const useFetch = (arr, obj = { query: "", page: "", with_genres: "" }) => {
             .then(data => setData(data));
     }, [...arr, obj.query, obj.page])
 
-    return data
+    return data;
 }
 
 export default useFetch;

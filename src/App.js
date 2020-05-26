@@ -1,9 +1,9 @@
 import React from 'react';
-import { Main } from './App.style';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import useFetch from './hooks/useFetch';
+import { Main } from './App.style';
 import NavBar from './components/navbar/NavBar';
 import Home from './views/home/Home';
-import useFetch from './hooks/useFetch';
 import DataContext from './context/DataContext';
 import MediaGenres from './views/mediagenres/MediaGenres';
 import MediaView from './views/mediaview/MediaView';
@@ -16,7 +16,7 @@ const App = () => {
   const info = {
     movies: useFetch([3, 'trending', 'movies', 'week']),
     series: useFetch([3, 'trending', 'tv', 'week'])
-  }
+  };
 
   return (
     <Router>

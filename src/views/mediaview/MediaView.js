@@ -7,8 +7,15 @@ import ShowMedia from './showmedia/ShowMedia';
 const MediaView = () => {
 
     const params = useParams();
-    
-    const arrGenresDefault = ["trending", "popular", "top_rated", "upcoming", "now_playing", "on_the_air"];
+
+    const arrGenresDefault = [
+        "trending",
+        "popular",
+        "top_rated",
+        "upcoming",
+        "now_playing",
+        "on_the_air"
+    ];
 
     return (
         <MediaContainerSection>
@@ -44,14 +51,14 @@ const MediaView = () => {
                     }
                     {params.mediagenres === "on_the_air" &&
                         <ShowMedia mediaType={params} title="Series en el aire" />
-                    }              
+                    }
                 </>
             }
             {params.media === "search" &&
-                <ShowMedia mediaType={params} title={`Resultados para: ${params.query}`} /> 
+                <ShowMedia mediaType={params} title={`Resultados para: ${params.query}`} />
             }
-            { arrGenresDefault.includes(params.mediagenres) ||
-                       <ShowMedia mediaType={params} title={`Genero ${params.mediagenres}`} />
+            {arrGenresDefault.includes(params.mediagenres) ||
+                <ShowMedia mediaType={params} title={`Genero ${params.mediagenres}`} />
             }
         </MediaContainerSection>
     );

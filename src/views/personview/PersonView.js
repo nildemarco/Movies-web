@@ -7,7 +7,7 @@ import PersonCredits from '../../components/credits/PersonCredits';
 const PersonView = () => {
 
     const params = useParams();
-    console.log(params)
+    
     return (
         <>
             <ContainerLinks>

@@ -1,8 +1,8 @@
 import React from 'react';
-import { IndividualSection, ContainerImg, ContainerLinks } from './IndividualCard.style';
 import { Link, Switch, Route, useParams } from 'react-router-dom';
-import { ReactComponent as ImgNotAvailable } from '../../assets/img.svg';
 import useFetch from '../../hooks/useFetch';
+import { IndividualSection, ContainerImg, ContainerLinks } from './IndividualCard.style';
+import { ReactComponent as ImgNotAvailable } from '../../assets/img.svg';
 import InfoCard from '../../components/infocard/InfoCard';
 import RepartoCard from '../../components/repartocard/RepartoCard';
 import MoviesVideos from '../../components/movies-videos/MoviesVideos';
@@ -14,7 +14,7 @@ const IndividualCard = () => {
 
     const params = useParams();
 
-    const info = useFetch([3, params.media, params.id])
+    const info = useFetch([3, params.media, params.id]);
 
     return (
         <IndividualSection>

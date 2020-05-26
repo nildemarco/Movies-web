@@ -1,8 +1,8 @@
 import React from 'react';
-import { InfoContainer, InfoDetails, ExternalIdContainer } from './InfoCard.styled';
-import { ReactComponent as ImgNotAvailable } from '../../assets/img.svg';
 import { useParams, Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+import { InfoContainer, InfoDetails, ExternalIdContainer } from './InfoCard.styled';
+import { ReactComponent as ImgNotAvailable } from '../../assets/img.svg';
 import Rating from '@material-ui/lab/Rating';
 import ExternalId from '../externalIds/ExternalId';
 

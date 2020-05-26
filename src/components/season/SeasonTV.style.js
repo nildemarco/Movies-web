@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const SeasonTvContainer = styled.section`
 display: flex;
 flex-direction: column;
+justify-content: center;
 select {
     width: 250px;
     height: 50px;
@@ -19,18 +20,23 @@ select {
     border-color: rgb(220, 221, 222);
     margin-left: 37px;
 }
+@media (max-width: 770px) {
+   select {
+       width: 170px;
+       height: 45px;
+       font-size: 16px;
+   }
+}
 `;
 
 export const EpisodeCardContainer = styled.div`
 display: flex;
-justify-content: space-around;
 flex-wrap: wrap;
 `;
 
 export const EpisodeCard = styled.article`
 width: 400px;
 margin: 10px;
-padding-left: 20px;
 display: flex;
 flex-direction: column;
 color: #FAFAFA;
@@ -58,4 +64,8 @@ h3 {
         margin-right: 5px;
         color: rgb(33, 150, 243);
     } 
-}`;
+}
+@media (max-width: 770px) {
+ width: 300px;    
+}
+`;

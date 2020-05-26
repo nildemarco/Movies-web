@@ -1,6 +1,6 @@
 import React from 'react';
-import { ShowMediaContainer } from './ShowMedia.style';
 import useFetch from '../../../hooks/useFetch';
+import { ShowMediaContainer } from './ShowMedia.style';
 import CardContainer from '../../../components/card-container/CardContainer';
 import PaginationContainer from '../../../components/pagination/PaginationContainer';
 
@@ -10,7 +10,7 @@ const ShowMedia = ({ mediaType, title }) => {
     const obj = {
         page: mediaType.numberPage,
         ...(mediaType.media === "search" && { query: mediaType.query }),
-        ...(mediaType.media !== "search" && { with_genres: mediaType.query }),
+        ...(mediaType.media !== "search" && { with_genres: mediaType.query })
     };
 
     const isTrending = mediaType.mediagenres === 'trending';
@@ -21,9 +21,9 @@ const ShowMedia = ({ mediaType, title }) => {
         (obj.with_genres ?
             [3, "discover", mediaType.media]
             :
-            [3, mediaType.media, mediaType.mediagenres])
+            [3, mediaType.media, mediaType.mediagenres]);
 
-    const data = useFetch(propsFetch, obj ? obj : "")
+    const data = useFetch(propsFetch, obj ? obj : "");
 
     return (
         <ShowMediaContainer>

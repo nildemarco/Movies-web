@@ -10,10 +10,10 @@ img {
     height: auto;
 }
 .icon-img-card {
-        width:40px;
-        height:50px;
-        fill:rgb(168, 170, 173);
-    }
+    width:40px;
+    height:50px;
+    fill:rgb(168, 170, 173);
+}
 
 @media (max-width: 770px) {
     img {

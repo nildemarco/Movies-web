@@ -1,7 +1,7 @@
 import React from 'react';
-import { MoviesVideosContainer, VideoDetails } from './MoviesVideos.style';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+import { MoviesVideosContainer, VideoDetails } from './MoviesVideos.style';
 
 
 const MoviesVideos = () => {
@@ -9,7 +9,7 @@ const MoviesVideos = () => {
     const params = useParams();
 
     const info = useFetch([3, params.media, params.id, 'videos'])
-    
+
     return (
         <MoviesVideosContainer>
             {info && info.results.map(video => {

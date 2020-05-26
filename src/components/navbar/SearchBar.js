@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { SearchInput } from './NavBar.style';
 import { useHistory } from 'react-router-dom';
+import { SearchInput } from './NavBar.style';
 import { ReactComponent as SearchIcon } from './../../assets/lupa.svg';
 
 const SearchBar = () => {
@@ -21,14 +21,14 @@ const SearchBar = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label><SearchIcon className="icons-home" alt="Search" />
+            <label>
+                <SearchIcon className="icons-home" alt="Search" />
                 <SearchInput
                     type="text"
                     placeholder="Search"
                     onChange={handleChange}
                     value={querySearch}
-                >
-                </SearchInput>
+                />
             </label>
         </form>
     );

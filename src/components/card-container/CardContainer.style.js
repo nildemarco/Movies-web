@@ -33,14 +33,13 @@ a {
  margin: 10px;
  fill: rgb(33, 150, 243);
 }
-
-
-`
+`;
 
 export const ContainerArticles = styled.div`
 width: 100%;
 display: flex;
 flex-wrap: ${props => props.wrap ? 'no-wrap' : 'wrap'};
+justify-content:center;
 align-items: flex-start;
 @media (max-width: 768px) {
     display: flex;

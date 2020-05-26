@@ -1,8 +1,8 @@
 import React from 'react';
-import { RepartoContainer } from './RepartoCard.style';
-import Card from '../card/Card';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+import { RepartoContainer } from './RepartoCard.style';
+import Card from '../card/Card';
 
 const RepartoCard = () => {
 

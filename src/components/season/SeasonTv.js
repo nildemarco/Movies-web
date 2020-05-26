@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { SeasonTvContainer, EpisodeCardContainer, EpisodeCard } from './SeasonTV.style';
 import { useParams, useHistory } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+import { SeasonTvContainer, EpisodeCardContainer, EpisodeCard } from './SeasonTV.style';
 import { ReactComponent as ImgNotAvailable } from '../../assets/img.svg';
 
 const SeasonTv = ({ seasons }) => {
