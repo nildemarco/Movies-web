@@ -8,7 +8,7 @@ const complexMixin = css`
   margin: 5px 15px;
   width: 30px;
   height: 30px;
-  fill: ${props => props.isLocation ? 'rgb(33, 150, 243)' : 'white'};
+  fill: ${props => props.islocation ? 'rgb(33, 150, 243)' : 'white'};
   cursor: pointer;
   :hover {
     fill: rgb(33, 150, 243);

@@ -20,11 +20,11 @@ const SearchBar = () => {
         history.push(`/search/multi/${querySearch}/page/1`);
         setQuerySearch('')
     }
-
+    
     return (
         <form onSubmit={handleSubmit}>
             <label>
-                <SearchIcon isLocation={location.pathname.includes('/search')}
+                <SearchIcon islocation={location.pathname.includes('/search')? 1: 0}
                 />
                 <SearchInput
                     type="text"

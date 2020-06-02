@@ -12,17 +12,17 @@ const NavBar = () => {
         <Nav>
             <Link to="/"  >
                 <HomeIcons
-                    isLocation={location.pathname === "/"}
+                    islocation={location.pathname === "/"? 1: 0}
                 />
             </Link>
             <Link to="/movie"  >
                 <Projector
-                    isLocation={location.pathname.includes("/movie")}
+                    islocation={location.pathname.includes("/movie")? 1: 0}
                 />
             </Link>
             <Link to="/tv" >
                 <Tv
-                    isLocation={location.pathname.includes("/tv")}
+                    islocation={location.pathname.includes("/tv")? 1: 0}
                 />
             </Link>
             <SearchBar />

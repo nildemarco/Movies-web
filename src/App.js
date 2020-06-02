@@ -7,10 +7,9 @@ import NavBar from './components/navbar/NavBar';
 
 const Home = lazy(()=> import('./views/home/Home'));
 const MediaGenres =lazy(()=> import('./views/mediagenres/MediaGenres'));
-const MediaView = lazy(()=>('./views/mediaview/MediaView'));
+const MediaView = lazy(()=> import('./views/mediaview/MediaView'));
 const IndividualCard = lazy(()=> import('./views/individualcard/IndividualCard'));
 const PersonView = lazy(() => import('./views/personview/PersonView'));
-
 
 const App = () => {
 
@@ -23,7 +22,7 @@ const App = () => {
     <Router>
       <NavBar />
       <Main>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div className="loading-message">Loading...</div>}>
         <DataContext.Provider value={info}>
           <Switch>
             <Route exact path="/" component={Home} />

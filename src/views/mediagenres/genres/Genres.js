@@ -5,16 +5,15 @@ import CardContainer from '../../../components/card-container/CardContainer';
 
 
 const Genres = ({ mediaType }) => {
+    const isTv = mediaType === "tv";
 
     const data = {
         popular: useFetch([3, mediaType, 'popular']),
         topRated: useFetch([3, mediaType, 'top_rated']),
         upcoming: useFetch([3, mediaType, 'upcoming']),
-        nowPlaying: useFetch([3, mediaType, mediaType === "tv" ? 'on_the_air' : 'now_playing'])
+        nowPlaying: useFetch([3, mediaType, isTv ? 'on_the_air' : 'now_playing'])
     };
-
-    const isTv = mediaType === "tv";
-
+    
     return (
         <GenresContainer>
             {data &&

@@ -1,8 +1,8 @@
 import React from 'react';
-import useFetch from '../../../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 import { ShowMediaContainer } from './ShowMedia.style';
-import CardContainer from '../../../components/card-container/CardContainer';
-import PaginationContainer from '../../../components/pagination/PaginationContainer';
+import CardContainer from '../../components/card-container/CardContainer';
+import PaginationContainer from '../../components/pagination/PaginationContainer';
 
 
 const ShowMedia = ({ mediaType, title }) => {

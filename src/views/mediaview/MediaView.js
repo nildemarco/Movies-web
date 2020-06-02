@@ -1,7 +1,7 @@
 import React from 'react';
 import { MediaContainerSection } from './MediaView.styled';
 import { useParams } from 'react-router-dom';
-import ShowMedia from './showmedia/ShowMedia';
+import ShowMedia from '../showmedia/ShowMedia';
 
 
 const MediaView = () => {
@@ -16,7 +16,7 @@ const MediaView = () => {
         "now_playing",
         "on_the_air"
     ];
-
+    console.log(params)
     return (
         <MediaContainerSection>
             {params.media === "movie" &&
