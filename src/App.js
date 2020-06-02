@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import useFetch from './hooks/useFetch';
+import DataContext from './context/DataContext';
 import { Main } from './App.style';
 import NavBar from './components/navbar/NavBar';
-import Home from './views/home/Home';
-import DataContext from './context/DataContext';
-import MediaGenres from './views/mediagenres/MediaGenres';
-import MediaView from './views/mediaview/MediaView';
-import IndividualCard from './views/individualcard/IndividualCard';
-import PersonView from './views/personview/PersonView';
+
+const Home = lazy(()=> import('./views/home/Home'));
+const MediaGenres =lazy(()=> import('./views/mediagenres/MediaGenres'));
+const MediaView = lazy(()=>('./views/mediaview/MediaView'));
+const IndividualCard = lazy(()=> import('./views/individualcard/IndividualCard'));
+const PersonView = lazy(() => import('./views/personview/PersonView'));
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
     <Router>
       <NavBar />
       <Main>
+        <Suspense fallback={<div>Loading...</div>}>
         <DataContext.Provider value={info}>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -31,6 +33,7 @@ const App = () => {
             <Route exact path="/:media/:id/:section/:seasonNumber?" component={IndividualCard} />
           </Switch>
         </DataContext.Provider>
+        </Suspense>
       </Main>
     </Router>
   );
