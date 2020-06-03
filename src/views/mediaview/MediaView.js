@@ -16,7 +16,7 @@ const MediaView = () => {
         "now_playing",
         "on_the_air"
     ];
-    console.log(params)
+
     return (
         <MediaContainerSection>
             {params.media === "movie" &&
