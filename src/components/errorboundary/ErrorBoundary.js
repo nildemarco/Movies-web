@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NotFound from '../../views/notfound/NotFound'
 
 class ErrorBoundary extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class ErrorBoundary extends Component {
       
       render() {
         if (this.state.hasError) {
-          return <h1>Something went wrong.</h1>;
+          return <NotFound/>;
         }
     
         return this.props.children; 

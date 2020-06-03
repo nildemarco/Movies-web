@@ -11,6 +11,7 @@ const MediaGenres = lazy(() => import('./views/mediagenres/MediaGenres'));
 const MediaView = lazy(() => import('./views/mediaview/MediaView'));
 const IndividualCard = lazy(() => import('./views/individualcard/IndividualCard'));
 const PersonView = lazy(() => import('./views/personview/PersonView'));
+const NotFound = lazy(()=> import('./views/notfound/NotFound'))
 
 const App = () => {
 
@@ -32,6 +33,7 @@ const App = () => {
                 <Route exact path="/:media/:mediagenres/:query?/page/:numberPage" component={MediaView} />
                 <Route exact path="/person/:id/:section" component={PersonView} />
                 <Route exact path="/:media/:id/:section/:seasonNumber?" component={IndividualCard} />
+                <Route component={NotFound}/>
               </Switch>
             </DataContext.Provider>
           </Suspense>
