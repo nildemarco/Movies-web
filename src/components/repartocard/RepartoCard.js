@@ -4,6 +4,9 @@ import useFetch from '../../hooks/useFetch';
 import { RepartoContainer } from './RepartoCard.style';
 import Card from '../card/Card';
 
+// Ojo con el spanglish en el nombre de este componente
+// Es mas claro decidirse y poner o todo en ingles, o todo en español. 
+
 const RepartoCard = () => {
 
     const params = useParams();

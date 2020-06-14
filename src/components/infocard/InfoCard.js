@@ -8,6 +8,10 @@ import ExternalId from '../externalIds/ExternalId';
 
 const InfoCard = () => {
 
+    // Este componente es brillante, pero hay muchisima logica en el medio. 
+    // Yo veria de dividirlo en distintos componentes mas pequeños
+    // Y sacar la logica del JSX al componente para que la lectura sea mas sencilla. 
+
     const params = useParams();
 
     const isPerson = params.media === "person";

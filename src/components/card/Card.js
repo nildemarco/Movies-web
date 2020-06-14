@@ -9,6 +9,8 @@ const Card = ({ id, title, img, subtitle, mediaType }) => {
         <StyledArticle>
             <Link to={`/${mediaType}/${id}/info`}>
                 {img ?
+                // Privilegia poner los dos puntos delante del segundo elemento, en lugar de al final del primero:
+                // simplifica la lectura 
                     <img src={`https://image.tmdb.org/t/p/original${img}`} alt={title} /> :
                     <div className="image-not-available">
                         <ImgNotAvailable className="icon-img-card"  alt="Not available"/>

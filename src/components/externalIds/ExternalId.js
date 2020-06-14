@@ -2,6 +2,8 @@ import React from 'react';
 import { StyledLink } from './ExternalId.style';
 import { FaImdb, FaFacebookSquare, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
 
+// Excelente. Este archivo, yo diria, deberia estar en una carpeta tipo /helpers o /lib, mas que en 
+// components, porque no es propiamente un "componente" como los demas. 
 const ExternalId = ({ data, person }) => {
 
     const [id, value] = data;
