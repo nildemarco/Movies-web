@@ -6,11 +6,13 @@ import { Main } from './App.style';
 import NavBar from './components/navbar/NavBar';
 import ErrorBoundary from './components/errorboundary/ErrorBoundary';
 
+// Buen uso de suspense y lazy!
 const Home = lazy(() => import('./views/home/Home'));
 const MediaGenres = lazy(() => import('./views/mediagenres/MediaGenres'));
 const MediaView = lazy(() => import('./views/mediaview/MediaView'));
 const IndividualCard = lazy(() => import('./views/individualcard/IndividualCard'));
 const PersonView = lazy(() => import('./views/personview/PersonView'));
+// excelente agregar un 404 
 const NotFound = lazy(()=> import('./views/notfound/NotFound'))
 
 const App = () => {

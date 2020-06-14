@@ -4,9 +4,11 @@ import { ShowMediaContainer } from './ShowMedia.style';
 import CardContainer from '../../components/card-container/CardContainer';
 import PaginationContainer from '../../components/pagination/PaginationContainer';
 
-
+// no me vuelve loca el nombre mediaType, prefiero params, porque queda mas claro a primera vista
+// de donde sale esa informacion. 
 const ShowMedia = ({ mediaType, title }) => {
 
+    // Trata de encontrar un nombre mas descritivo. Que quede clara la funcion de este objeto.
     const obj = {
         page: mediaType.numberPage,
         ...(mediaType.media === "search" && { query: mediaType.query }),

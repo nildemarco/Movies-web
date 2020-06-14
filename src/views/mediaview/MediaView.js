@@ -3,6 +3,16 @@ import { MediaContainerSection } from './MediaView.styled';
 import { useParams } from 'react-router-dom';
 import ShowMedia from '../showmedia/ShowMedia';
 
+// Mismo comentario que en MediaGenres: no puede hacer ShowMedia este trabajo en lugar de tener
+// un componente que solo manda lo que encuentra en params? Si los titulos son un problema
+// se puede hacer un objecto en ShowMedia
+// asi:
+
+// {
+// trending: "Peliculas que son tendencia",
+//    popular: "Peliculas populares",
+// ... etc 
+// }
 
 const MediaView = () => {
 

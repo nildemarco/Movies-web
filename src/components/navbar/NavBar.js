@@ -12,6 +12,8 @@ const NavBar = () => {
         <Nav>
             <Link to="/"  >
                 <HomeIcons
+                // Si entiendo  bien, seria mejor pasar true y false en lugar de 1 y 0
+                // Usar el tipo correcto siempre es mas descriptivo y claro. 
                     islocation={location.pathname === "/"? 1: 0}
                 />
             </Link>
@@ -26,6 +28,7 @@ const NavBar = () => {
                 />
             </Link>
             <SearchBar />
+            {/* Cuidado a la hora de cerrar los componentes! */}
         </Nav >
     );
 }

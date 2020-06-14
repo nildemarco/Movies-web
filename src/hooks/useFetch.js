@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+// Este hook es excelente. 
 const useFetch = (arr, obj = { query: "", page: "", with_genres: "" }) => {
 
     const [data, setData] = useState(null);
@@ -8,7 +9,7 @@ const useFetch = (arr, obj = { query: "", page: "", with_genres: "" }) => {
         let urlApi = new URL('https://api.themoviedb.org/3/')
         urlApi.pathname = arr.join("/")
         urlApi.search = new URLSearchParams({
-            api_key: process.env.REACT_APP_API_KEY,
+            api_key: "6a93319b2d78795675b8bd9aa0965a95",
             language: "es-ES",
             ...(obj.page && { page: obj.page }),
             ...(obj.query && { query: obj.query }),

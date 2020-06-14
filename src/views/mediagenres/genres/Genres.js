@@ -3,7 +3,6 @@ import useFetch from '../../../hooks/useFetch';
 import { GenresContainer } from './Genres.style';
 import CardContainer from '../../../components/card-container/CardContainer';
 
-
 const Genres = ({ mediaType }) => {
     const isTv = mediaType === "tv";
 
