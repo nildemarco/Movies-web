@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const RepartoContainer = styled.section`
+export const CastSection = styled.section`
 display: flex;
 flex-wrap: wrap;
 justify-content: center;

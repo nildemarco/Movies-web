@@ -1,17 +1,17 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
-import { RepartoContainer } from './RepartoCard.style';
+import { CastSection } from './CastContainer.style';
 import Card from '../card/Card';
 
-const RepartoCard = () => {
+const CastContainer = () => {
 
     const params = useParams();
-    
+
     const info = useFetch([3, params.media, params.id, 'credits']);
 
     return (
-        <RepartoContainer>
+        <CastSection>
             {info && info.cast.map(element => {
                 return (
                     <Card
@@ -24,8 +24,8 @@ const RepartoCard = () => {
                     />
                 );
             })}
-        </RepartoContainer>
+        </CastSection>
     );
 }
 
-export default RepartoCard;
+export default CastContainer;

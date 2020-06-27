@@ -9,9 +9,10 @@ const Card = ({ id, title, img, subtitle, mediaType }) => {
         <StyledArticle>
             <Link to={`/${mediaType}/${id}/info`}>
                 {img ?
-                    <img src={`https://image.tmdb.org/t/p/original${img}`} alt={title} /> :
+                    <img src={`https://image.tmdb.org/t/p/original${img}`} alt={title} />
+                    :
                     <div className="image-not-available">
-                        <ImgNotAvailable className="icon-img-card"  alt="Not available"/>
+                        <ImgNotAvailable className="icon-img-card" alt="Not available" />
                     </div>
                 }
                 <h3>{title}</h3>

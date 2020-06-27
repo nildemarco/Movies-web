@@ -11,7 +11,8 @@ export const ContainerImg = styled.div`
 width: 100%;
 img {
     width:100%;
-    height: auto;
+    height: 735px;
+    object-fit: cover;
     
 }
 .icon-img-card {

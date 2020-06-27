@@ -4,7 +4,7 @@ import useFetch from '../../hooks/useFetch';
 import { IndividualSection, ContainerImg, ContainerLinks } from './IndividualCard.style';
 import { ReactComponent as ImgNotAvailable } from '../../assets/img.svg';
 import InfoCard from '../../components/infocard/InfoCard';
-import RepartoCard from '../../components/repartocard/RepartoCard';
+import CastContainer from '../../components/castcontainer/CastContainer';
 import MoviesVideos from '../../components/movies-videos/MoviesVideos';
 import SimilarMedia from '../../components/similar-media/SimilarMedia';
 import SeasonTv from '../../components/season/SeasonTv';
@@ -22,7 +22,12 @@ const IndividualCard = () => {
                 <>
                     <ContainerImg>
                         {info.backdrop_path ?
-                            <img src={`https://image.tmdb.org/t/p/original${info.backdrop_path}`} /> :
+                            <img src={`https://image.tmdb.org/t/p/original${info.backdrop_path}`}
+                                alt={params.media === "movie" ?
+                                    info.title
+                                    :
+                                    info.name} />
+                            :
                             <ImgNotAvailable className="icon-img-card" />
                         }
                     </ContainerImg>
@@ -52,7 +57,7 @@ const IndividualCard = () => {
                         <Route path="/:media/:id/seasons/:seasonNumber"
                             render={(props) => <SeasonTv seasons={info.seasons} />}
                         />
-                        <Route path="/:media/:id/cast" component={RepartoCard} />
+                        <Route path="/:media/:id/cast" component={CastContainer} />
                         <Route path="/:media/:id/videos" component={MoviesVideos} />
                         <Route path="/:media/:id/similar" component={SimilarMedia} />
                     </Switch>
