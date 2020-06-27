@@ -1,10 +1,16 @@
 import React from 'react';
-import useFetch from '../../../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
+import { useParams } from 'react-router-dom';
 import { GenresContainer } from './Genres.style';
-import CardContainer from '../../../components/card-container/CardContainer';
+import CardContainer from '../../components/card-container/CardContainer';
 
 
-const Genres = ({ mediaType }) => {
+const Genres = () => {
+
+    const params = useParams();
+
+    const mediaType = params.media
+
     const isTv = mediaType === "tv";
 
     const data = {
@@ -13,7 +19,7 @@ const Genres = ({ mediaType }) => {
         upcoming: useFetch([3, mediaType, 'upcoming']),
         nowPlaying: useFetch([3, mediaType, isTv ? 'on_the_air' : 'now_playing'])
     };
-    
+
     return (
         <GenresContainer>
             {data &&
